@@ -6,11 +6,11 @@ export default function ContactMe() {
       <Navbar />
       <section className="contact">
         <h2>Get In Touch</h2>
-        <p>Email: your.email@example.com</p>
+        <p>Email: sevanisko04@gmail.com</p>
         <div className="social-links">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Twitter</a>
+          <a href="https://github.com/sevanisk">GitHub</a>
+          <a href="https://www.linkedin.com/in/sophiaevanisko/">LinkedIn</a>
+          <a href="https://www.instagram.com/sophiaevanisko/">Instagram</a>
         </div>
       </section>
     </div>
