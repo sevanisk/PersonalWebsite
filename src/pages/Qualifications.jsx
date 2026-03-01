@@ -1,9 +1,10 @@
-//import './HomePage.css';
+import Navbar from '../components/Navbar';
 
-export default function HomePage() {
+export default function Qualifications() {
   return (
-    <div className="home-page">
-      <section className="about">
+    <div className="qualifications-page">
+      <Navbar />
+      <section className="qualifications">
         <h2>Qualifications</h2>
         <p>
         My degrees and certifications.

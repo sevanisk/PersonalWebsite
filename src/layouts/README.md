@@ -1,6 +1,6 @@
 # LAYOUTS
 
-Layout components that define the overall page structure for different sections of the site. Wraps pages and provides shared UI elements such as headers, footers, sidebars, or navigation bars.
+Layout components that define the overall page structure for different sections of the site. Wraps pages and provides shared UI elements such as headers, footers, navbars, or navigation bars.
 
 Examples:
 

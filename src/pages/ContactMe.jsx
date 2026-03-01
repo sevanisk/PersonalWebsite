@@ -1,8 +1,9 @@
-//import './HomePage.css';
+import Navbar from '../components/Navbar';
 
-export default function HomePage() {
+export default function ContactMe() {
   return (
-    <div className="home-page">
+    <div className="contact-page">
+      <Navbar />
       <section className="contact">
         <h2>Get In Touch</h2>
         <p>Email: your.email@example.com</p>

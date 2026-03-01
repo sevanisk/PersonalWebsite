@@ -1,9 +1,10 @@
-//import './HomePage.css';
+import Navbar from '../components/Navbar';
 
-export default function HomePage() {
+export default function Portfolio() {
   return (
-    <div className="home-page">
-      <section className="about">
+    <div className="portfolio-page">
+      <Navbar />
+      <section className="portfolio">
         <h2>Portfolio</h2>
         <p>
             Add portfolio items here.

@@ -1,14 +1,15 @@
-//import './HomePage.css';
+import Navbar from '../components/Navbar';
 
-export default function HomePage() {
+export default function Actuary() {
   return (
-    <div className="home-page">
-      <section className="about">
-        <h2>Actuary</h2>
-        <p>
-         My actuarial exams.
-        </p>
-      </section>
+    <div className="actuary-page">
+        <Navbar />
+        <section className="actuary">
+            <h2>Actuary</h2>
+            <p>
+            My actuarial exams.
+            </p>
+        </section>
     </div>
   );
 }

@@ -1,0 +1,9 @@
+
+/* BackgroundLayout.css */
+body {
+    background-color: #017374; /* Teal background */
+    font-family: 'Windows98';
+    margin: 10;
+    padding: 0;
+  /* any other global layout styles */
+}

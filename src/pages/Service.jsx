@@ -1,9 +1,10 @@
-//import './HomePage.css';
+import Navbar from '../components/Navbar';
 
-export default function HomePage() {
+export default function Service() {
   return (
-    <div className="home-page">
-      <section className="about">
+    <div className="service-page">
+      <Navbar />
+      <section className="service">
         <h2>My service</h2>
         <p>
          Volunteering.

@@ -10,13 +10,22 @@ import CompSci from './pages/CompSci';
 import Actuary from './pages/Actuary';
 import ContactMe from './pages/ContactMe';
 
-// Where I am setting up my router and top level logic.
-// 
+import BackgroundLayout from './layouts/BackgroundLayout';
+
+// Setting up my router.
+// Basically a directory of each page and the path to get there.
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route 
+          path="/" 
+          element={
+          <BackgroundLayout>
+            <HomePage />
+          </BackgroundLayout>
+        } />
+        
         <Route path="/about" element={<AboutMe />} />
         <Route path="/service" element={<Service />} />
         <Route path="/qualifications" element={<Qualifications />} />
@@ -28,6 +37,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App

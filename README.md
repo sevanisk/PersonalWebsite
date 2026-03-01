@@ -21,6 +21,10 @@ https://nodejs.org/en/download/current
 
 5. Change App.jsx to be a Router (make sure to do npm install react-router-dom) that points to our home page. Create HomePage.jsx in the pages directory.
 
+6. Create empty shells for each page I am going to create and add them to the Router. See AboutMe.jsx, Actuary.jsx, CompSci.jsx,etc.
+
+7. Create the .css file for my background on the main page. It is going to be old windows themed similar to my people.tamu page.
+
 Notes:
 run with `npm run dev`
 
