@@ -17,6 +17,13 @@ https://nodejs.org/en/download/current
 
 3. Run `npm create vite@latest` in a Powershell window and follow the prompts. Choose React for the type of app
 
+4. Create folders to have an actual project structure. Move base page into the pages directory.
+
+5. Change App.jsx to be a Router (make sure to do npm install react-router-dom) that points to our home page. Create HomePage.jsx in the pages directory.
+
+Notes:
+run with `npm run dev`
+
 Vite Notes:
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
