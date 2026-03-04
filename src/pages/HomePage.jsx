@@ -21,6 +21,25 @@ export default function HomePage() {
       initialX: 700,
       initialY: 100,
     });
+
+    createPopup({
+      title: 'cat.png',
+      children: (
+        
+        <div style={{ padding: '10px', textAlign: 'center' }}>
+          <p>As an apology for the empty pages, please enjoy this photo of my cat.</p>
+          <img 
+            src="/cat_with_tongue.jpg" 
+            alt="Cat with tongue"
+            style={{ maxWidth: '100%', height: 'auto' }}
+          />
+        </div>
+      ),
+      width: 400,
+      height: 600,
+      initialX: 1100,
+      initialY: 320,
+    });
   }, []); // Empty dependency array = runs only once on mount
 
   return (
