@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useResponsive } from '../hooks/useResponsive';
 import './Popup.css';
 
 export default function Popup({
@@ -12,12 +13,16 @@ export default function Popup({
   onClose,
   zIndex = 1000,
 }) {
+  const { isMobile } = useResponsive();
   const [position, setPosition] = useState({ x: initialX, y: initialY });
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const windowRef = useRef(null);
 
   const handleMouseDown = (e) => {
+    // Disable dragging on mobile
+    if (isMobile) return;
+
     // Don't drag if clicking the close button
     if (e.target.closest('.popup-close-btn')) {
       return;
@@ -59,7 +64,7 @@ export default function Popup({
   return (
     <div
       ref={windowRef}
-      className="popup-window"
+      className={`popup-window ${isMobile ? 'popup-mobile' : 'popup-desktop'}`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
@@ -82,8 +87,10 @@ export default function Popup({
           ×
         </button>
       </div>
-      <div className="popup-content">
-        {children}
+      <div className="popup-inner">
+        <div className="popup-content">
+          {children}
+        </div>
       </div>
     </div>
   );

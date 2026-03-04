@@ -11,9 +11,9 @@ export default function HomePage() {
       title: 'Welcome.txt',
       children: (
         <div style={{ padding: '10px', fontFamily: 'Courier New' }}>
-          <p>Welcome to my personal website!</p>
-          <p>This site is built with React and features Windows 95-style popups.</p>
-          <p>Click the X button to close this window, or drag the title bar to move it around.</p>
+          <p>Welcome to my personal website! This site is built with React and deployed with AWS Amplify.</p>
+          <p><b>UNDER CONSTRUCTION!!</b> check in each day for new updates!!</p>
+          <p>You can also check my GitHub to see my changelog :)</p>
         </div>
       ),
       width: 450,
