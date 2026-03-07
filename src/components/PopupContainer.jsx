@@ -1,29 +1,59 @@
 import Popup from './Popup';
 import { useResponsive } from '../hooks/useResponsive';
 
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function toFraction(percentValue, fallbackFraction) {
+  if (typeof percentValue !== 'number' || Number.isNaN(percentValue)) {
+    return fallbackFraction;
+  }
+
+  const normalized = percentValue > 1 ? percentValue / 100 : percentValue;
+  return clamp(normalized, 0.1, 1);
+}
+
 export default function PopupContainer({ popups, onClosePopup }) {
-  const { isMobile } = useResponsive();
+  const { isMobile, viewportWidth, viewportHeight } = useResponsive();
 
   return (
     <>
       {popups.map((popup, index) => {
-        // Calculate default dimensions based on device type
-        const defaultWidth = isMobile ? Math.min(400, window.innerWidth - 20) : popup.width || 400;
-        const defaultHeight = isMobile ? 'auto' : popup.height || 300;
-        
-        // For mobile, ignore offset positioning; for desktop, stagger windows
-        const defaultX = isMobile ? 50 : popup.initialX || 50 + index * 30;
-        const defaultY = isMobile ? 50 : popup.initialY || 50 + index * 30;
+        const widthFraction = toFraction(
+          popup.widthPercent,
+          isMobile ? 0.94 : 0.38,
+        );
+        const heightFraction = toFraction(
+          popup.heightPercent,
+          isMobile ? 0.6 : 0.45,
+        );
+
+        const fallbackXFraction = isMobile
+          ? 0.03
+          : clamp((50 + index * 30) / Math.max(1, viewportWidth), 0, 1);
+        const fallbackYFraction = isMobile
+          ? 0.05
+          : clamp((50 + index * 30) / Math.max(1, viewportHeight), 0, 1);
+
+        const xFraction = toFraction(
+          popup.xPercent,
+          fallbackXFraction,
+        );
+        const yFraction = toFraction(
+          popup.yPercent,
+          fallbackYFraction,
+        );
 
         return (
           <Popup
             key={popup.id}
             id={popup.id}
             title={popup.title}
-            initialX={defaultX}
-            initialY={defaultY}
-            width={defaultWidth}
-            height={defaultHeight}
+            xPercent={xFraction}
+            yPercent={yFraction}
+            widthPercent={widthFraction}
+            heightPercent={heightFraction}
             zIndex={1000 + index}
             onClose={onClosePopup}
           >

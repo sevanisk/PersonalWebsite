@@ -11,29 +11,27 @@ import Actuary from './pages/Actuary';
 import ContactMe from './pages/ContactMe';
 
 import BackgroundLayout from './layouts/BackgroundLayout';
+import { PopupProvider } from './context/PopupContext';
 
 // Setting up my router.
 // Basically a directory of each page and the path to get there.
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route 
-          path="/" 
-          element={
-          <BackgroundLayout>
-            <HomePage />
-          </BackgroundLayout>
-        } />
-        
-        <Route path="/about" element={<AboutMe />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/qualifications" element={<Qualifications />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/compsci" element={<CompSci />} />
-        <Route path="/actuary" element={<Actuary />} />
-        <Route path="/contactme" element={<ContactMe />} />
-      </Routes>
+      <PopupProvider>
+        <Routes>
+          <Route element={<BackgroundLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route path="/service" element={<Service />} />
+            <Route path="/qualifications" element={<Qualifications />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/compsci" element={<CompSci />} />
+            <Route path="/actuary" element={<Actuary />} />
+            <Route path="/contactme" element={<ContactMe />} />
+          </Route>
+        </Routes>
+      </PopupProvider>
     </Router>
   );
 }

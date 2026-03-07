@@ -1,10 +1,8 @@
 import { useEffect } from 'react';
-import Navbar from '../components/Navbar';
-import PopupContainer from '../components/PopupContainer';
-import { usePopupManager } from '../hooks/usePopupManager';
+import { usePopup } from '../context/PopupContext';
 
 export default function HomePage() {
-  const { popups, createPopup, closePopup } = usePopupManager();
+  const { createPopup } = usePopup();
 
   useEffect(() => {
     createPopup({
@@ -16,39 +14,37 @@ export default function HomePage() {
           <p>You can also check my GitHub to see my changelog :)</p>
         </div>
       ),
-      width: 450,
-      height: 200,
-      initialX: 700,
-      initialY: 100,
+      widthPercent: 38,
+      heightPercent: 25,
+      xPercent: 58,
+      yPercent: 12,
     });
 
     createPopup({
       title: 'cat.png',
       children: (
-        
-        <div style={{ padding: '10px', textAlign: 'center' }}>
+        <div style={{ padding: '10px', fontFamily: 'Courier New' , textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '8px', height: '100%', minHeight: 0 }}>
           <p>As an apology for the empty pages, please enjoy this photo of my cat.</p>
-          <img 
-            src="/cat_with_tongue.jpg" 
-            alt="Cat with tongue"
-            style={{ maxWidth: '100%', height: 'auto' }}
-          />
+          <div className="popup-media">
+            <img 
+              src="/cat_with_tongue.jpg" 
+              alt="Cat with tongue"
+            />
+          </div>
         </div>
       ),
-      width: 400,
-      height: 600,
-      initialX: 1100,
-      initialY: 320,
+      widthPercent: 20,
+      heightPercent: 50,
+      xPercent: 34,
+      yPercent: 40,
     });
-  }, []); // Empty dependency array = runs only once on mount
+  }, [createPopup]);
 
   return (
-    <div className="home-page">
-      <Navbar />
+    <>
       <section className="hero">
         <h1>Pardon my dust. I'm learning React -_-</h1>
       </section>
-      <PopupContainer popups={popups} onClosePopup={closePopup} />
-    </div>
+    </>
   );
 }

@@ -1,9 +1,6 @@
-import Navbar from '../components/Navbar';
-
 export default function ContactMe() {
   return (
     <div className="contact-page">
-      <Navbar />
       <section className="contact">
         <h2>Get In Touch</h2>
         <p>Email: sevanisko04@gmail.com</p>
