@@ -22,7 +22,11 @@ const navItems = [
 
 export default function Navbar() {
   return (
-    <nav className="navbar" aria-label="Primary navigation">
+    <nav
+      className="navbar"
+      aria-label="Primary navigation"
+      style={{ '--nav-items': navItems.length }}
+    >
       <ul className="navbar-grid">
         {navItems.map((item) => (
           <li className="navbar-item" key={item.to}>

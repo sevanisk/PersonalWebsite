@@ -147,7 +147,7 @@ export default function Popup({
         width: `${popupWidth}px`,
         height: `${popupHeight}px`,
         maxWidth: 'calc(100vw - 16px)',
-        maxHeight: 'calc(100vh - 16px)',
+        maxHeight: 'calc(100dvh - 16px)',
         zIndex: zIndex,
       }}
       onMouseDown={handleMouseDown}
