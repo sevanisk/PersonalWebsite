@@ -123,19 +123,19 @@ export default function Popup({
 
     setPosition({
       x: Math.floor(normalizedXPercent * viewportWidth),
-      y: Math.floor(yPercent * viewportHeight),
+      y: Math.floor(normalizedYPercent * viewportHeight),
     });
 
     const handleResize = () => {
       setPosition({
         x: Math.floor(normalizedXPercent * window.innerWidth),
-        y: Math.floor(yPercent * window.innerHeight),
+        y: Math.floor(normalizedYPercent * window.innerHeight),
       });
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [isMobile, popupWidth, popupHeight, normalizedXPercent, yPercent, viewportWidth, viewportHeight]);
+  }, [isMobile, popupWidth, popupHeight, normalizedXPercent, normalizedYPercent, viewportWidth, viewportHeight]);
 
   return (
     <div
