@@ -15,7 +15,8 @@ function toFraction(percentValue, fallbackFraction) {
 }
 
 export default function PopupContainer({ popups, onClosePopup }) {
-  const { isMobile, viewportWidth, viewportHeight } = useResponsive();
+  const { isMobile } = useResponsive();
+
 
   return (
     <>
@@ -29,20 +30,13 @@ export default function PopupContainer({ popups, onClosePopup }) {
           isMobile ? 0.6 : 0.45,
         );
 
-        const fallbackXFraction = isMobile
-          ? 0.03
-          : clamp((50 + index * 30) / Math.max(1, viewportWidth), 0, 1);
-        const fallbackYFraction = isMobile
-          ? 0.05
-          : clamp((50 + index * 30) / Math.max(1, viewportHeight), 0, 1);
-
         const xFraction = toFraction(
           popup.xPercent,
-          fallbackXFraction,
+          0.03,
         );
         const yFraction = toFraction(
           popup.yPercent,
-          fallbackYFraction,
+          0.03,
         );
 
         return (
@@ -54,8 +48,8 @@ export default function PopupContainer({ popups, onClosePopup }) {
             yPercent={yFraction}
             widthPercent={widthFraction}
             heightPercent={heightFraction}
-            zIndex={1000 + index}
             onClose={onClosePopup}
+            zIndex={1000 + index}
           >
             {popup.children}
           </Popup>

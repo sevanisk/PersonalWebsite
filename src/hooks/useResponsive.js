@@ -3,25 +3,19 @@ import { useState, useEffect } from 'react';
 const MOBILE_BREAKPOINT = 768;
 
 export function useResponsive() {
-  const getViewport = () => {
+  const getIsMobile = () => {
     if (typeof window === 'undefined') {
-      return { width: 1200, height: 800 };
+      return false;
     }
 
-    return {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
+    return window.innerWidth < MOBILE_BREAKPOINT;
   };
 
-  const [viewport, setViewport] = useState(getViewport);
-  const [isMobile, setIsMobile] = useState(viewport.width < MOBILE_BREAKPOINT);
+  const [isMobile, setIsMobile] = useState(getIsMobile);
 
   useEffect(() => {
     const handleResize = () => {
-      const nextViewport = getViewport();
-      setViewport(nextViewport);
-      setIsMobile(nextViewport.width < MOBILE_BREAKPOINT);
+      setIsMobile(getIsMobile());
     };
 
     window.addEventListener('resize', handleResize);
@@ -31,7 +25,5 @@ export function useResponsive() {
   return {
     isMobile,
     breakpoint: MOBILE_BREAKPOINT,
-    viewportWidth: viewport.width,
-    viewportHeight: viewport.height,
   };
 }

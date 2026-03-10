@@ -17,7 +17,7 @@ export default function HomePage() {
       widthPercent: 38,
       heightPercent: 25,
       xPercent: 58,
-      yPercent: 12,
+      yPercent: 20,
     });
 
     createPopup({
