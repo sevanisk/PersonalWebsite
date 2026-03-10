@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
 import DiplomaPdf from '../assets/Diploma.pdf';
 
 export default function Qualifications() {
   const { createPopup } = usePopup();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     createPopup({
       title: 'My Education',
       children: (

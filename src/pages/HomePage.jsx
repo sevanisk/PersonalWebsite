@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
 
 export default function HomePage() {
   const { createPopup } = usePopup();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     createPopup({
       title: 'Welcome.txt',
       children: (

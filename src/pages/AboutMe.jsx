@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
 import GrandCanyon1 from '../assets/GrandCanyon1.jpg';
 import CameraHiding from '../assets/CameraHiding.jpg';
@@ -6,7 +6,7 @@ import CameraHiding from '../assets/CameraHiding.jpg';
 export default function AboutMe() {
   const { createPopup } = usePopup();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     createPopup({
       title: 'GrandCanyon1.jpg',
       children: (
