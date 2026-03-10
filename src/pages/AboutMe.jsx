@@ -72,9 +72,9 @@ export default function AboutMe() {
       title: 'FAST_FACTS!',
       children: (
         <div style={{fontFamily: 'Courier New'}} className="pop-up-inner border-faint text-box">
-          <strong>Personality type:</strong> INTP &emsp; &emsp; <br /> <br />
-          <strong>Favorite Books:</strong> Lockwood &amp; Co., Cain's Jawbone, The Minecraft Redstone Handbook<br /> <br />
-          <strong>Currently Reading:</strong> Cybersecurity Law by Kosseff, Pride and Prejudice by Jane Austen<br /> <br />
+          <strong>Personality type:</strong> INTP <br /> <br />
+          <strong>Favorite Books:</strong> Lockwood &amp; Co., Katabasis, The Minecraft Redstone Handbook<br /> <br />
+          <strong>Currently Reading:</strong> Red Rising by Pierce Brown, The Tainted Cup<br /> <br />
           <strong>Favorite Band:</strong> The Strokes <br /> <br />
           <strong>Favorite Song:</strong> Why Are Sundays So Depressing<br /><br /> 
           <strong>Favorite Movie:</strong> Pride and Prejudice and Zombies <br /> <br />
