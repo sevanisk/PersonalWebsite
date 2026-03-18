@@ -16,10 +16,10 @@ export default function Qualifications() {
           </div>
         </div>
       ),
-      widthPercent: 12,
-      heightPercent: 20,
-      xPercent: 15,
-      yPercent: 2,
+      widthPercent: 18,
+      heightPercent: 25,
+      xPercent: 44,
+      yPercent: 24,
     });
 
     return () => {
