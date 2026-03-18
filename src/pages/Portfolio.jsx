@@ -69,6 +69,10 @@ export default function AboutMe() {
       xPercent: 38,
       yPercent: 55,
     });
+
+    return () => {
+      closeAll();
+    };
   }, [createPopup, closeAll]);
 
   return (
