@@ -4,7 +4,7 @@ import GrandCanyon1 from '../assets/GrandCanyon1.jpg';
 import CameraHiding from '../assets/CameraHiding.jpg';
 
 export default function AboutMe() {
-  const { createPopup } = usePopup();
+  const { createPopup, closeAll } = usePopup();
 
   useLayoutEffect(() => {
     createPopup({
@@ -88,7 +88,10 @@ export default function AboutMe() {
       yPercent: 42,
     });
 
-  }, [createPopup]);
+    return () => {
+      closeAll();
+    };
+  }, [createPopup, closeAll]);
 
   return (
     <div className="about-page">

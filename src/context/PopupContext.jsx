@@ -1,5 +1,4 @@
-import { createContext, useContext, useLayoutEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { createContext, useContext } from 'react';
 import PopupContainer from '../components/PopupContainer';
 import { usePopupManager } from '../hooks/usePopupManager';
 
@@ -7,15 +6,6 @@ const PopupContext = createContext(null);
 
 export function PopupProvider({ children }) {
   const popupManager = usePopupManager();
-  const location = useLocation();
-  const previousPathRef = useRef(location.pathname);
-
-  useLayoutEffect(() => {
-    if (previousPathRef.current !== location.pathname) {
-      popupManager.closeAll();
-      previousPathRef.current = location.pathname;
-    }
-  }, [location.pathname, popupManager]);
 
   return (
     <PopupContext.Provider value={popupManager}>

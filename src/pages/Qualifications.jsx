@@ -3,7 +3,7 @@ import { usePopup } from '../context/PopupContext';
 import DiplomaPdf from '../assets/Diploma.pdf';
 
 export default function Qualifications() {
-  const { createPopup } = usePopup();
+  const { createPopup, closeAll } = usePopup();
 
   useLayoutEffect(() => {
     createPopup({
@@ -22,7 +22,10 @@ export default function Qualifications() {
       yPercent: 2,
     });
 
-  }, [createPopup]);
+    return () => {
+      closeAll();
+    };
+  }, [createPopup, closeAll]);
 
   return (
     <div className="qualifications-page">
