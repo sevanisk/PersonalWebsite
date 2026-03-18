@@ -11,14 +11,14 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 // Icons
-import homeIcon from '../assets/react.svg';
-import aboutIcon from '../assets/aboutme.svg';
-import projectsIcon from '../assets/camera.svg';
-import qualificationsIcon from '../assets/certificate.svg';
-import compsciIcon from '../assets/globe_map-0.svg';
-import actuaryIcon from '../assets/game_freecell-1.svg';
-import serviceIcon from '../assets/overlay_share-4.svg';
-import contactIcon from '../assets/loudspeaker_rays-0.svg';
+import homeIcon from '../assets/home.png';
+import aboutIcon from '../assets/aboutme.png';
+import projectsIcon from '../assets/camera.png';
+import qualificationsIcon from '../assets/certificate.png';
+import compsciIcon from '../assets/world.ico';
+import actuaryIcon from '../assets/actuary.png';
+import serviceIcon from '../assets/service.png';
+import contactIcon from '../assets/contactme.png';
 
 ////////////////////////////////////////////////////////////////////////////////
 // Constants.
@@ -26,14 +26,14 @@ import contactIcon from '../assets/loudspeaker_rays-0.svg';
 
 // All of the routes and their corresponding labels and icons on the navbar.
 const navItems = [
-  {to: '/',               label: 'Home',            icon: homeIcon},
-  {to: '/about',          label: 'About Me',        icon: aboutIcon},
-  {to: '/portfolio',      label: 'My Projects',     icon: projectsIcon},
-  {to: '/qualifications', label: 'Qualifications',  icon: qualificationsIcon},
-  {to: '/compsci',        label: 'Computer Science',icon: compsciIcon},
-  {to: '/actuary',        label: 'Actuarial Work',  icon: actuaryIcon},
-  {to: '/service',        label: 'Service',         icon: serviceIcon},
-  {to: '/contactme',      label: 'Contact Me',      icon: contactIcon},
+  {to: '/',               label: 'Home',              icon: homeIcon},
+  {to: '/about',          label: 'About Me',          icon: aboutIcon},
+  {to: '/portfolio',      label: 'My Projects',       icon: projectsIcon},
+  {to: '/qualifications', label: 'Qualifications',    icon: qualificationsIcon},
+  {to: '/compsci',        label: 'Computer Science',  icon: compsciIcon},
+  {to: '/actuary',        label: 'Actuarial Work',    icon: actuaryIcon},
+  {to: '/service',        label: 'Service',           icon: serviceIcon},
+  {to: '/contactme',      label: 'Contact Me',        icon: contactIcon},
 ];
 
 ////////////////////////////////////////////////////////////////////////////////
