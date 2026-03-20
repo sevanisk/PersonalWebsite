@@ -1,7 +1,9 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
+import City from '../assets/city.png';
+import Sunset from '../assets/Sunbeam.jpg';
 
-export default function AboutMe() {
+export default function ContactMe() {
   const { createPopup, closeAll } = usePopup();
 
   useLayoutEffect(() => {
@@ -45,7 +47,7 @@ export default function AboutMe() {
         </div>
       ),
       widthPercent: 18,
-      heightPercent: 16,
+      heightPercent: 20,
       xPercent: 34,
       yPercent: 60,
     });
@@ -62,9 +64,46 @@ export default function AboutMe() {
         </div>
       ),
       widthPercent: 22,
-      heightPercent: 30,
+      heightPercent: 20,
       xPercent: 70,
       yPercent: 42,
+    });
+
+    createPopup({
+      title: 'City',
+      variant: 'image',
+      children: (
+        <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
+          <div className="popup-media">
+            <img
+              src={City}
+              alt="City"
+            />
+          </div>
+        </div>
+      ),
+      widthPercent: 20,
+      heightPercent: 20,
+      xPercent: 48,
+      yPercent: 40,
+    });
+
+    createPopup({
+      title: 'Sunset.jpg',
+      children: (
+        <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
+          <div className="popup-media">
+            <img
+              src={Sunset}
+              alt="Sunset"
+            />
+          </div>
+        </div>
+      ),
+      widthPercent: 32,
+      heightPercent: 30,
+      xPercent: 60,
+      yPercent: 66,
     });
 
     return () => {

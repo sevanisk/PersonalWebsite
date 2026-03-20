@@ -110,7 +110,6 @@ export default function AboutMe() {
       yPercent: 18,
     });
 
-    
     createPopup({
       title: 'Guitar',
       variant: 'image',
