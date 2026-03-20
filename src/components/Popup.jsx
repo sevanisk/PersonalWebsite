@@ -53,7 +53,10 @@ export default function Popup({
   heightPercent = 45,       // Percent of the view height for popup height.
   onClose,                  // Callback function to handle closing the popup.
   zIndex        = 1000,     // Z-index for the popup.
+  variant       = 'window', // Visual style for the popup shell.
 }) {
+
+  const isImagePopup = variant === 'image';
 
   // Gets responsive information about viewport size.
   // TODO: If this is a mobile device, navbar at top of screen?
@@ -122,6 +125,15 @@ export default function Popup({
     // Disable dragging on mobile.
     if (isMobile) return;
 
+    if (isImagePopup) {
+      setIsDragging(true);
+      setDragOffset({
+        x: e.clientX - position.x,
+        y: e.clientY - position.y,
+      });
+      return;
+    }
+
     // Don't drag if clicking the close button.
     if (e.target.closest('.popup-close-btn')) {
       return;
@@ -188,7 +200,11 @@ export default function Popup({
   return (
     <div
       ref={windowRef}
-      className={`popup-window ${isMobile ? 'popup-mobile' : 'popup-desktop'}`}
+      className={[
+        'popup-window',
+        isMobile ? 'popup-mobile' : 'popup-desktop',
+        isImagePopup ? 'popup-image-window' : '',
+      ].filter(Boolean).join(' ')}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
@@ -200,23 +216,31 @@ export default function Popup({
       }}
       onMouseDown={handleMouseDown}
     >
-      <div className="popup-title-bar">
-        <span className="popup-title">{title}</span>
-        <button
-          className="popup-close-btn"
-          onClick={(e) => {
-            e.stopPropagation();
-            onClose?.(id);
-          }}
-        >
-          ×
-        </button>
-      </div>
-      <div className="popup-inner">
-        <div className="popup-content">
+      {isImagePopup ? (
+        <div className="popup-content popup-content-image">
           {children}
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="popup-title-bar">
+            <span className="popup-title">{title}</span>
+            <button
+              className="popup-close-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                onClose?.(id);
+              }}
+            >
+              ×
+            </button>
+          </div>
+          <div className="popup-inner">
+            <div className="popup-content">
+              {children}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

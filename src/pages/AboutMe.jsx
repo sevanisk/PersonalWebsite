@@ -2,6 +2,9 @@ import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
 import GrandCanyon1 from '../assets/GrandCanyon1.jpg';
 import CameraHiding from '../assets/CameraHiding.jpg';
+import Guitar from '../assets/guitar.png';
+import Butterfly from '../assets/butterfly.png';
+import Cat from '../assets/cat2.png';
 
 export default function AboutMe() {
   const { createPopup, closeAll } = usePopup();
@@ -20,7 +23,7 @@ export default function AboutMe() {
         </div>
       ),
       widthPercent: 15,
-      heightPercent: 29,
+      heightPercent: 36,
       xPercent: 15,
       yPercent: 2,
     });
@@ -37,10 +40,10 @@ export default function AboutMe() {
           </div>
         </div>
       ),
-      widthPercent: 11,
-      heightPercent: 23,
-      xPercent: 84,
-      yPercent: 13,
+      widthPercent: 18,
+      heightPercent: 32,
+      xPercent: 80,
+      yPercent: 8,
     });
 
     createPopup({
@@ -83,9 +86,83 @@ export default function AboutMe() {
         </div>
       ),
       widthPercent: 22,
-      heightPercent: 55,
+      heightPercent: 50,
       xPercent: 70,
-      yPercent: 42,
+      yPercent: 46,
+    });
+
+    createPopup({
+      title: 'Butterfly',
+      variant: 'image',
+      children: (
+        <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
+          <div className="popup-media">
+            <img
+              src={Butterfly}
+              alt="Butterfly"
+            />
+          </div>
+        </div>
+      ),
+      widthPercent: 20,
+      heightPercent: 20,
+      xPercent: 64,
+      yPercent: 18,
+    });
+
+    
+    createPopup({
+      title: 'Guitar',
+      variant: 'image',
+      children: (
+        <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
+          <div className="popup-media">
+            <img
+              src={Guitar}
+              alt="Guitar"
+            />
+          </div>
+        </div>
+      ),
+      widthPercent: 20,
+      heightPercent: 20,
+      xPercent: 14,
+      yPercent: 48,
+    });
+
+    
+    createPopup({
+      title: 'Cat',
+      variant: 'image',
+      children: (
+        <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
+          <div className="popup-media">
+            <img
+              src={Cat}
+              alt="Kitty"
+            />
+          </div>
+        </div>
+      ),
+      widthPercent: 20,
+      heightPercent: 20,
+      xPercent: 40,
+      yPercent: 0,
+    });
+
+    createPopup({
+      title: 'Music',
+      children: (
+        <div style={{fontFamily: 'Courier New'}} className="pop-up-inner border-faint text-box">
+          I play guitar, bass, piano, am currently learning the drums, and have 
+          been singing in choir all my life. One day I will leave tech to perform
+          my travelling one-man band act across the country.<br /><br />
+        </div>
+      ),
+      widthPercent: 20,
+      heightPercent: 20,
+      xPercent: 22,
+      yPercent: 73,
     });
 
     return () => {

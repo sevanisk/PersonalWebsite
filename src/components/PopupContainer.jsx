@@ -5,13 +5,22 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
-function toFraction(percentValue, fallbackFraction) {
+function toSizeFraction(percentValue, fallbackFraction) {
   if (typeof percentValue !== 'number' || Number.isNaN(percentValue)) {
     return fallbackFraction;
   }
 
   const normalized = percentValue > 1 ? percentValue / 100 : percentValue;
   return clamp(normalized, 0.1, 1);
+}
+
+function toPositionFraction(percentValue, fallbackFraction) {
+  if (typeof percentValue !== 'number' || Number.isNaN(percentValue)) {
+    return fallbackFraction;
+  }
+
+  const normalized = percentValue > 1 ? percentValue / 100 : percentValue;
+  return clamp(normalized, 0, 1);
 }
 
 export default function PopupContainer({ popups, onClosePopup }) {
@@ -21,20 +30,20 @@ export default function PopupContainer({ popups, onClosePopup }) {
   return (
     <>
       {popups.map((popup, index) => {
-        const widthFraction = toFraction(
+        const widthFraction = toSizeFraction(
           popup.widthPercent,
           isMobile ? 0.94 : 0.38,
         );
-        const heightFraction = toFraction(
+        const heightFraction = toSizeFraction(
           popup.heightPercent,
           isMobile ? 0.6 : 0.45,
         );
 
-        const xFraction = toFraction(
+        const xFraction = toPositionFraction(
           popup.xPercent,
           0.03,
         );
-        const yFraction = toFraction(
+        const yFraction = toPositionFraction(
           popup.yPercent,
           0.03,
         );
@@ -44,6 +53,7 @@ export default function PopupContainer({ popups, onClosePopup }) {
             key={popup.id}
             id={popup.id}
             title={popup.title}
+            variant={popup.variant}
             xPercent={xFraction}
             yPercent={yFraction}
             widthPercent={widthFraction}

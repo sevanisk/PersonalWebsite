@@ -1,7 +1,5 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
-import GrandCanyon1 from '../assets/GrandCanyon1.jpg';
-import CameraHiding from '../assets/CameraHiding.jpg';
 
 export default function AboutMe() {
   const { createPopup, closeAll } = usePopup();
