@@ -58,6 +58,19 @@ export default function Qualifications() {
       yPercent: 45,
     });
 
+    createPopup({
+      title: 'International Engineering',
+      children: (
+        <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
+          I also obtained a certificate in International Engineering, which included courses in global engineering practices, cross-cultural communication, and international project management.
+        </div>
+      ),
+      widthPercent: 18,
+      heightPercent: 20,
+      xPercent: 76,
+      yPercent: 20,
+    });
+
     return () => {
       closeAll();
     };

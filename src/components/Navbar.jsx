@@ -17,7 +17,6 @@ import projectsIcon from '../assets/camera.png';
 import qualificationsIcon from '../assets/certificate.png';
 import compsciIcon from '../assets/world.ico';
 import actuaryIcon from '../assets/actuary.png';
-import serviceIcon from '../assets/service.png';
 import contactIcon from '../assets/contactme.png';
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +31,6 @@ const navItems = [
   {to: '/qualifications', label: 'Qualifications',    icon: qualificationsIcon},
   {to: '/compsci',        label: 'Computer Science',  icon: compsciIcon},
   {to: '/actuary',        label: 'Actuarial Work',    icon: actuaryIcon},
-  {to: '/service',        label: 'Service',           icon: serviceIcon},
   {to: '/contactme',      label: 'Contact Me',        icon: contactIcon},
 ];
 

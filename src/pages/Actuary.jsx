@@ -9,14 +9,15 @@ export default function Actuary() {
       title: 'Exams',
       children: (
         <div style={{fontFamily: 'Courier New'}} className="pop-up-inner border-faint text-box">
-          Exam P - <em> Passed September 2025 </em> <br/><br/>
+          Exam P - <em> Passed September 2025 </em> <br/>
+          Score: 9 <br/><br/>
           Exam FM - <em> Sitting April 2026 </em> <br/><br/>
           Exam SRM - <em> Sitting September 2026 </em> <br/><br/>
           <br />
         </div>
       ),
       widthPercent: 25,
-      heightPercent: 22,
+      heightPercent: 26,
       xPercent: 21,
       yPercent: 21,
     });
@@ -46,7 +47,7 @@ export default function Actuary() {
         <section className="actuary">
             <h2>Actuary</h2>
             <p>
-            My actuarial exams and progress towards .
+            My actuarial exams and progress towards ASA.
             </p>
         </section>
     </div>

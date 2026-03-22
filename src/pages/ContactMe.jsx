@@ -32,9 +32,9 @@ export default function ContactMe() {
         </div>
       ),
       widthPercent: 20,
-      heightPercent: 17,
+      heightPercent: 24,
       xPercent: 76,
-      yPercent: 16,
+      yPercent: 12,
     });
 
     createPopup({
@@ -48,7 +48,7 @@ export default function ContactMe() {
       ),
       widthPercent: 18,
       heightPercent: 20,
-      xPercent: 34,
+      xPercent: 30,
       yPercent: 60,
     });
 
