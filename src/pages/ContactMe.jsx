@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
 import City from '../assets/city.png';
-import Sunset from '../assets/Sunbeam.jpg';
+import Sunset from '../assets/Sunbeam.JPG';
 
 export default function ContactMe() {
   const { createPopup, closeAll } = usePopup();
