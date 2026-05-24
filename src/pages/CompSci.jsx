@@ -1,8 +1,14 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function CompSci() {
   const { createPopup, closeAll } = usePopup();
+
+  usePageMeta({
+    title: 'Computer Science Experience - Sophia Evanisko',
+    description: 'Learn about Sophia\'s computer science experience and projects.',
+  });
 
   useLayoutEffect(() => {
     createPopup({

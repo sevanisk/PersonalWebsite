@@ -1,6 +1,7 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
 import { getImageUrl } from '../utils/imageCdn';
+import usePageMeta from '../hooks/usePageMeta';
 import GrandCanyon1 from '../assets/GrandCanyon1.jpg';
 import CameraHiding from '../assets/CameraHiding.jpg';
 import Guitar from '../assets/guitar.png';
@@ -9,6 +10,11 @@ import Cat from '../assets/cat2.png';
 
 export default function AboutMe() {
   const { createPopup, closeAll } = usePopup();
+
+  usePageMeta({
+    title: 'About Me - Sophia Evanisko',
+    description: 'Learn more about Sophia\'s work experience, background, and interests.',
+  });
 
   useLayoutEffect(() => {
     createPopup({
@@ -51,7 +57,7 @@ export default function AboutMe() {
       title: 'About_Me',
       children: (
         <div style={{fontFamily: 'Courier New'}} className="pop-up-inner border-faint text-box">
-          I am a resourceful, ambitious, and adventurous embedded junior software engineer with experience in real-time operating systems and developing low-level drivers. 
+          I am a creative, ambitious, and adventurous software-engineer-turned-actuary with experience in real-time operating systems and developing low-level drivers. 
           I graduated May of 2025 from Texas A&M with a degree in Computer Science and Applied Mathematics, but just because I pursue analytical
           fields doesn't mean I don't have a creative side! <br /><br />
           In my free time, I enjoy DMing Dungeons and Dragons games with my friends,

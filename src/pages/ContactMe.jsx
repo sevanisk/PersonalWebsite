@@ -1,11 +1,18 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
 import { getImageUrl } from '../utils/imageCdn';
+import usePageMeta from '../hooks/usePageMeta';
+
 import City from '../assets/city.png';
 import Sunset from '../assets/Sunbeam.JPG';
 
 export default function ContactMe() {
   const { createPopup, closeAll } = usePopup();
+
+  usePageMeta({
+    title: 'Contact Me - Sophia Evanisko',
+    description: 'Learn about how to get in touch with Sophia for inquiries or collaborations.',
+  });
 
   useLayoutEffect(() => {
     createPopup({

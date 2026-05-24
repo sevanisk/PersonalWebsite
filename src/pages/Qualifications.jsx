@@ -4,9 +4,15 @@ import { getImageUrl } from '../utils/imageCdn';
 import Graduated from '../assets/IGraduated.jpg';
 import DiplomaPdf from '../assets/Diploma.pdf';
 import ResumePdf from '../assets/Evanisko_Sophia_2026_Software.pdf';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function Qualifications() {
   const { createPopup, closeAll } = usePopup();
+
+  usePageMeta({
+    title: 'Qualifications - Sophia Evanisko',
+    description: 'Learn about Sophia\'s education, certifications, and downloadable resume/diploma.',
+  });
 
   useLayoutEffect(() => {
     createPopup({

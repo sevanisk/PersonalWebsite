@@ -1,9 +1,15 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
 import { getImageUrl } from '../utils/imageCdn';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function HomePage() {
   const { createPopup, closeAll } = usePopup();
+
+  usePageMeta({
+    title: 'Home - Sophia Evanisko',
+    description: 'Welcome to Sophia\'s personal website!',
+  });
 
   useLayoutEffect(() => {
     const isMobile = window.innerWidth < 768;

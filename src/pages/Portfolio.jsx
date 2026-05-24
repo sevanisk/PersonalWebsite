@@ -3,9 +3,15 @@ import { usePopup } from '../context/PopupContext';
 import { getImageUrl } from '../utils/imageCdn';
 import CES from '../assets/CES2026.jpg';
 import GrimEncounters from '../assets/GrimEncounters.png';
+import usePageMeta from '../hooks/usePageMeta';
 
-export default function AboutMe() {
+export default function Portfolio() {
   const { createPopup, closeAll } = usePopup();
+
+  usePageMeta({
+    title: 'Portfolio - Sophia Evanisko',
+    description: 'Learn about Sophia\'s notable projects and work.',
+  });
 
   useLayoutEffect(() => {
     createPopup({

@@ -1,8 +1,14 @@
 import { useLayoutEffect } from 'react';
+import usePageMeta from '../hooks/usePageMeta';
 import { usePopup } from '../context/PopupContext';
 
 export default function Actuary() {
   const { createPopup, closeAll } = usePopup();
+
+  usePageMeta({
+    title: 'Actuary - Sophia Evanisko',
+    description: 'Learn about Sophia\'s actuarial exams and progress towards ASA.',
+  });
 
   useLayoutEffect(() => {
     createPopup({
