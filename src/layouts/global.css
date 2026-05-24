@@ -95,10 +95,12 @@ button:focus-visible {
 
 @font-face {
     font-family: Windows98;
+    font-display: auto;
     src: url(../assets/Windows98.ttf);
 }
 
 @font-face {
     font-family: Windows;
+    font-display: auto;
     src: url(../assets/MS-Sans-Serif.ttf);
 }
