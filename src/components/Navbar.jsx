@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 // Styles
 import './Navbar.css';
+import { getImageUrl } from '../utils/imageCdn';
 
 // Icons
 import homeIcon from '../assets/home.png';
@@ -25,13 +26,13 @@ import contactIcon from '../assets/contactme.png';
 
 // All of the routes and their corresponding labels and icons on the navbar.
 const navItems = [
-  {to: '/',               label: 'Home',              icon: homeIcon},
-  {to: '/about',          label: 'About Me',          icon: aboutIcon},
-  {to: '/portfolio',      label: 'My Projects',       icon: projectsIcon},
-  {to: '/qualifications', label: 'Qualifications',    icon: qualificationsIcon},
-  {to: '/compsci',        label: 'Computer Science',  icon: compsciIcon},
-  {to: '/actuary',        label: 'Actuarial Work',    icon: actuaryIcon},
-  {to: '/contactme',      label: 'Contact Me',        icon: contactIcon},
+  {to: '/',               label: 'Home',              icon: getImageUrl('/assets/home.png', homeIcon)},
+  {to: '/about',          label: 'About Me',          icon: getImageUrl('/assets/aboutme.png', aboutIcon)},
+  {to: '/portfolio',      label: 'My Projects',       icon: getImageUrl('/assets/camera.png', projectsIcon)},
+  {to: '/qualifications', label: 'Qualifications',    icon: getImageUrl('/assets/certificate.png', qualificationsIcon)},
+  {to: '/compsci',        label: 'Computer Science',  icon: getImageUrl('/assets/world.ico', compsciIcon)},
+  {to: '/actuary',        label: 'Actuarial Work',    icon: getImageUrl('/assets/actuary.png', actuaryIcon)},
+  {to: '/contactme',      label: 'Contact Me',        icon: getImageUrl('/assets/contactme.png', contactIcon)},
 ];
 
 ////////////////////////////////////////////////////////////////////////////////

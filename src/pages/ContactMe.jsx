@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
+import { getImageUrl } from '../utils/imageCdn';
 import City from '../assets/city.png';
 import Sunset from '../assets/Sunbeam.JPG';
 
@@ -76,7 +77,7 @@ export default function ContactMe() {
         <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
           <div className="popup-media">
             <img
-              src={City}
+              src={getImageUrl('/assets/city.png', City)}
               alt="City"
             />
           </div>
@@ -94,7 +95,7 @@ export default function ContactMe() {
         <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
           <div className="popup-media">
             <img
-              src={Sunset}
+              src={getImageUrl('/assets/Sunbeam.JPG', Sunset)}
               alt="Sunset"
             />
           </div>

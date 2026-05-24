@@ -11,7 +11,7 @@ export default function Actuary() {
         <div style={{fontFamily: 'Courier New'}} className="pop-up-inner border-faint text-box">
           Exam P - <em> Passed September 2025 </em> <br/>
           Score: 9 <br/><br/>
-          Exam FM - <em> Sitting April 2026 </em> <br/><br/>
+          Exam FM - <em> Sitting June 2026 </em> <br/><br/>
           Exam SRM - <em> Sitting September 2026 </em> <br/><br/>
           <br />
         </div>
@@ -34,6 +34,20 @@ export default function Actuary() {
       heightPercent: 17,
       xPercent: 76,
       yPercent: 16,
+    });
+
+    createPopup({
+      title: 'Experience',
+      children: (
+        <div style={{fontFamily: 'Courier New'}} className="pop-up-inner border-faint text-box">
+         GEHA - <em> Government Employees Health Association </em> <br/><br/>
+          <br /><br />
+        </div>
+      ),
+      widthPercent: 40,
+      heightPercent: 27,
+      xPercent: 39,
+      yPercent: 50,
     });
 
     return () => {

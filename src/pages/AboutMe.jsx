@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
+import { getImageUrl } from '../utils/imageCdn';
 import GrandCanyon1 from '../assets/GrandCanyon1.jpg';
 import CameraHiding from '../assets/CameraHiding.jpg';
 import Guitar from '../assets/guitar.png';
@@ -16,7 +17,7 @@ export default function AboutMe() {
         <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
           <div className="popup-media">
             <img
-              src={GrandCanyon1}
+              src={getImageUrl('/assets/GrandCanyon1.jpg', GrandCanyon1)}
               alt="Grand Canyon"
             />
           </div>
@@ -34,7 +35,7 @@ export default function AboutMe() {
         <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
           <div className="popup-media">
             <img
-              src={CameraHiding}
+              src={getImageUrl('/assets/CameraHiding.jpg', CameraHiding)}
               alt="Camera hiding"
             />
           </div>
@@ -98,7 +99,7 @@ export default function AboutMe() {
         <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
           <div className="popup-media">
             <img
-              src={Butterfly}
+              src={getImageUrl('/assets/butterfly.png', Butterfly)}
               alt="Butterfly"
             />
           </div>
@@ -117,7 +118,7 @@ export default function AboutMe() {
         <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
           <div className="popup-media">
             <img
-              src={Guitar}
+              src={getImageUrl('/assets/guitar.png', Guitar)}
               alt="Guitar"
             />
           </div>
@@ -137,7 +138,7 @@ export default function AboutMe() {
         <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
           <div className="popup-media">
             <img
-              src={Cat}
+              src={getImageUrl('/assets/cat2.png', Cat)}
               alt="Kitty"
             />
           </div>

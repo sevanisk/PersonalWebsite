@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
+import { getImageUrl } from '../utils/imageCdn';
 import CES from '../assets/CES2026.jpg';
 import GrimEncounters from '../assets/GrimEncounters.png';
 
@@ -15,7 +16,7 @@ export default function AboutMe() {
           I was responsible for optimizing and parallelizing runs of a molecular dynamics simulation known as NAMD.
           <div className="popup-media">
             <img
-              src={CES}
+              src={getImageUrl('/assets/CES2026.jpg', CES)}
               alt="High Powered Computing"
             />
           </div>
@@ -36,7 +37,7 @@ export default function AboutMe() {
             Each year, companies showcase their latest innovations and products across various industries, including consumer electronics, automotive technology, smart home devices, and more.
             <div className="popup-media">
               <img
-                src={CES}
+                src={getImageUrl('/assets/CES2026.jpg', CES)}
                 alt="Consumer Electronics Show 2026"
               />
             </div>
@@ -58,7 +59,7 @@ export default function AboutMe() {
           Check it out at <a href="https://akxgo.itch.io/grim-encounters">this link</a>!
           <div className="popup-media">
             <img
-              src={GrimEncounters}
+              src={getImageUrl('/assets/GrimEncounters.png', GrimEncounters)}
               alt="Grim Encounters"
             />
           </div>

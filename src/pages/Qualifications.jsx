@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
+import { getImageUrl } from '../utils/imageCdn';
 import Graduated from '../assets/IGraduated.jpg';
 import DiplomaPdf from '../assets/Diploma.pdf';
 import ResumePdf from '../assets/Evanisko_Sophia_2026_Software.pdf';
@@ -46,7 +47,7 @@ export default function Qualifications() {
         <div style={{fontFamily: 'Courier New', textAlign: 'center', display: 'flex', flexDirection: 'column', height: '100%', minHeight: 0, boxSizing: 'border-box' }}>
           <div className="popup-media">
             <img
-              src={Graduated}
+              src={getImageUrl('/assets/IGraduated.jpg', Graduated)}
               alt="I Graduated!"
             />
           </div>

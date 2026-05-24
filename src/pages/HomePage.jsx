@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
 import { usePopup } from '../context/PopupContext';
+import { getImageUrl } from '../utils/imageCdn';
 
 export default function HomePage() {
   const { createPopup, closeAll } = usePopup();
@@ -39,7 +40,7 @@ export default function HomePage() {
               <p>As an apology for the empty pages, please enjoy this photo of my cat.</p>
               <div className="popup-media">
                 <img 
-                  src="/cat_with_tongue.jpg" 
+                  src={getImageUrl('/cat_with_tongue.jpg')}
                   alt="Cat with tongue"
                 />
               </div>
